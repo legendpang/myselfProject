@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="firstm" id="KGk-i7-Jjw" customClass="FirstMCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDH-ko-GSh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="No5-I6-C34">
+                                <rect key="frame" x="168" y="150" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="SBK-pE-R3i"/>
+                                    <constraint firstAttribute="height" constant="37" id="Wme-wZ-Gtm"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.97251815029999999" green="0.33381249629999998" blue="0.40081105160000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.37069791610000002" green="1" blue="0.27606440799999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJN-DN-y6u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="No5-I6-C34" secondAttribute="centerX" id="Hxr-zV-vQR"/>
+                            <constraint firstItem="No5-I6-C34" firstAttribute="top" secondItem="jDH-ko-GSh" secondAttribute="top" constant="150" id="h3p-d6-9fA"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-TU-6Yg">
+                        <rect key="frame" x="12" y="244" width="350" height="125"/>
+                        <color key="backgroundColor" red="0.54863963839999996" green="0.97458068330000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="36"/>
+                        <state key="normal" backgroundImage="qd_跨海image.jpg">
+                            <color key="titleColor" red="0.97501978049418314" green="0.30322370163276291" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="place:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="o73-ZB-9Jt"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fj7-d3-I9f">
+                        <rect key="frame" x="12" y="398" width="350" height="125"/>
+                        <color key="backgroundColor" red="0.96695495040000001" green="0.38689801419999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" backgroundImage="qd_big.jpg">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="foodButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OOm-iM-sBP"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jDH-ko-GSh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DFR-Ci-JDf"/>
+                    <constraint firstItem="Fj7-d3-I9f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="398" id="M9N-Vr-BgP"/>
+                    <constraint firstAttribute="bottom" secondItem="IgQ-TU-6Yg" secondAttribute="bottom" constant="184" id="R46-7I-TDU"/>
+                    <constraint firstAttribute="bottom" secondItem="Fj7-d3-I9f" secondAttribute="bottom" constant="30" id="UmH-eE-GV7"/>
+                    <constraint firstItem="IgQ-TU-6Yg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Xoz-ue-NdB"/>
+                    <constraint firstAttribute="bottom" secondItem="jDH-ko-GSh" secondAttribute="bottom" constant="353" id="bDT-0q-gk3"/>
+                    <constraint firstItem="IgQ-TU-6Yg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="244" id="iqT-cN-tpC"/>
+                    <constraint firstItem="jDH-ko-GSh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kqs-pE-q2W"/>
+                    <constraint firstItem="Fj7-d3-I9f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="lHc-nH-mpC"/>
+                    <constraint firstAttribute="trailing" secondItem="IgQ-TU-6Yg" secondAttribute="trailing" constant="13" id="oVt-vy-poR"/>
+                    <constraint firstAttribute="trailing" secondItem="jDH-ko-GSh" secondAttribute="trailing" id="ppc-nq-pWi"/>
+                    <constraint firstAttribute="trailing" secondItem="Fj7-d3-I9f" secondAttribute="trailing" constant="13" id="rWh-Sc-9S3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.70924600707275975" green="0.9806659002661553" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="backView" destination="jDH-ko-GSh" id="BAY-Si-pu6"/>
+                <outlet property="foodButton" destination="Fj7-d3-I9f" id="cuY-A1-vtS"/>
+                <outlet property="imageScrollView" destination="FJN-DN-y6u" id="acB-D2-BdK"/>
+                <outlet property="pageControl" destination="No5-I6-C34" id="rHx-qM-kYp"/>
+            </connections>
+            <point key="canvasLocation" x="288.5" y="313"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="qd_big.jpg" width="500" height="336"/>
+        <image name="qd_跨海image.jpg" width="499" height="247"/>
+    </resources>
+</document>
