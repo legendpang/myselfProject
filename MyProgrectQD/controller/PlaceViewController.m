@@ -96,8 +96,6 @@ static NSString * place = @"123";
         
     PlaceModel * model  = self.dataArray[indexPath.row];
     cell.nameLabel.text = model.name;
-        
-       // NSLog(@"55555548484----%f",cell.nameLabel.frame.size.width);
     cell.specialLabel.text = [NSString stringWithFormat:@"特色:%@",model.characteristic];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@ 公里",model.distance];
     [cell.iconImageView sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:[UIImage imageNamed:@"image_back"]];
