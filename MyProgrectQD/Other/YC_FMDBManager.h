@@ -10,10 +10,26 @@
 #import "FMDatabase.h"
 
 #import "PlaceModel.h"
+#import "FoodModel.h"
+
+#define LKSQLText @"text"
+#define LKSQLInt @"integer"
+#define LKSQLDouble @"float"
+#define LKSQLBlob @"blob"
+#define LKSQLNull @"null"
+#define LKSQLIntPrimaryKey @"integer primary key"
+
+
 @interface YC_FMDBManager : NSObject
-
 @property (nonatomic, strong) FMDatabase *fmdb;
-
+@property (nonatomic, strong) NSMutableArray * columnNameArr;//数据库表列名字
+@property (nonatomic, strong) NSMutableArray * columnTypeArr;//数据库表列类型（int，string。。。。。。）
+typedef enum
+{
+    placeModel = 0,
+    foodModel = 1,
+}
+FSO;
 //单例：为了保证整个有且只有一个数据库
 + (YC_FMDBManager *)shareManager;
 

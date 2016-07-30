@@ -7,8 +7,9 @@
 //
 
 #import "YC_FMDBManager.h"
-
+#import<objc/runtime.h>
 @implementation YC_FMDBManager
+
 //<1>
 + (YC_FMDBManager *)shareManager{
     static YC_FMDBManager *manager = nil;
@@ -22,6 +23,13 @@
    
     self = [super init];
     if (self) {
+        if (_columnNameArr==nil) {
+            _columnNameArr = [[NSMutableArray alloc] init];
+        }
+        if (_columnTypeArr == nil) {
+            _columnTypeArr = [[NSMutableArray alloc] init];
+        }
+        
         //<1>创建数据库在手机沙盒路径下的确定路径
         //数据库是以.db 或 .splite 结尾的类型
         //数据库是存放到沙盒的Documents里面的
@@ -37,28 +45,153 @@
             //<4>创建表格
             //表格与数据库一样，没有相同文件名字时，创建；存在相同名字时打开
             //<a>创建sqlite语句
-            NSString *sql = @"create table if not exists MyApp (ID integer primary key,name varchar(256),characteristic varchar(256),image varchar(256),cid varchar(256),tag varchar(256),iId varchar(256))";
+            //NSString *sql = @"create table if not exists MyApp (ID integer primary key,name varchar(256),characteristic varchar(256),image varchar(256),cid varchar(256),tag varchar(256),iId varchar(256))";
             /*
              ID:主键，不能重复
              name、age：字符串类型  varchar(256)256字节
              blob：二进制格式，data的格式
              //图片只能转为data类型存放
              */
-            //<2>创建表格
-            BOOL success = [_fmdb executeUpdate:sql];
-            //executeUpdate:除查询不用这个语句，其他的全是这个语句（增、删、创、改）
-            if (success) {
-                NSLog(@"创建成功");
-            }else{
-                NSLog(@"%@",_fmdb.lastErrorMessage);
-            }
             
+            
+            //<2>创建表格
+//            BOOL success = [_fmdb executeUpdate:sql];
+//            //executeUpdate:除查询不用这个语句，其他的全是这个语句（增、删、创、改）
+//            if (success) {
+//                NSLog(@"创建成功");
+//            }else{
+//                NSLog(@"%@",_fmdb.lastErrorMessage);
+//            }
+            [self creatTable];
         }else{
             NSLog(@"%@",_fmdb.lastErrorMessage);
         }
 
     }
     return self;
+}
+//一个数据库创建多张表
+-(void)creatTable
+{
+    NSArray * tableNameArr = @[@"placeModel",@"foodModel"];
+    for (int i=0; i<tableNameArr.count; i++) {
+        NSString * sql = [self setTableSql:i andTableName:tableNameArr];
+        BOOL success = [_fmdb executeUpdate:sql];
+        if (success) {
+            NSLog(@"-%@表创建成功",tableNameArr[i]);
+        }else{
+            NSLog(@"%@",_fmdb.lastErrorMessage);
+        }
+    }
+}
+
+- (NSString *)setTableSql:(FSO)type andTableName:(NSArray *)tableNameArr
+{
+   
+    NSString * sql = @"";
+    switch (type) {
+        case placeModel:{
+        sql = [NSString stringWithFormat:@"create table if not exists %@ (ID integer primary key,%@)",[tableNameArr objectAtIndex:type],[self setSql:[[tableNameArr objectAtIndex:type] uppercaseString]]];
+        }
+            break;
+        case foodModel:{
+            sql = [NSString stringWithFormat:@"create table if not exists %@ (ID integer primary key,%@)",[tableNameArr objectAtIndex:type],[self setSql:[[tableNameArr objectAtIndex:type] uppercaseString]]];
+            ;
+        }
+        default:
+            break;
+    }
+    return sql;
+}
+
+//创建sql语句
+-(NSString *)setSql:(NSString *)classTableName
+{
+    
+    [self getAllProperties:classTableName];
+    NSString * sql = [self getParameterString];
+    return sql;
+}
+
+//获取某张表的所有属性及类型
+- (void)getAllProperties:(NSString *)className
+{
+    
+    [_columnTypeArr removeAllObjects];
+    [_columnNameArr removeAllObjects];
+
+    u_int count;
+    //用这个类要导入#import<objc/runtime.h>，否则会报错
+    objc_property_t *properties  =class_copyPropertyList([NSClassFromString(className) class], &count);
+    
+    NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
+    NSMutableArray *propertiestypeArray = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i<count; i++)
+        
+    {
+        
+        const char* propertyName =property_getName(properties[i]);
+        const char* propertyType =property_getAttributes(properties[i]);
+        [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
+        [propertiestypeArray addObject:[NSString stringWithUTF8String:propertyType]];
+        
+    }
+   
+    for (NSString * str in propertiestypeArray) {
+         NSString * propertType = @"";
+        if ([str characterAtIndex:1]=='@') {
+            if (str.length >= 12) {
+                if ([[str substringToIndex:12] isEqualToString:@"T@\"NSString\""]) {
+                    propertType = @"NSString";
+                    
+                }
+            }else{
+                propertType = @"";
+            }
+        }else if ([str characterAtIndex:1]=='d'){
+            propertType = @"double";
+        }else if ([str characterAtIndex:1]=='q'){
+             propertType = @"NSInteger";
+        }else if ([str characterAtIndex:1]=='i'){
+             propertType = @"int";
+        }
+    }
+    [_columnNameArr addObjectsFromArray:propertiesArray];
+    for (NSString * typeStr in propertiestypeArray) {
+        [_columnTypeArr addObject:[self toDBType: typeStr]];
+    }
+    
+    
+    free(properties);
+}
+
+const static NSString* normaltypestring = @"floatdoublelongcharshort";
+const static NSString* blobtypestring = @"NSDataUIImage";
+-(NSString *)toDBType:(NSString *)type
+{
+    if([type isEqualToString:@"int"])
+    {
+        return LKSQLInt;
+    }
+    if ([normaltypestring rangeOfString:type].location != NSNotFound) {
+        return LKSQLDouble;
+    }
+    if ([blobtypestring rangeOfString:type].location != NSNotFound) {
+        return LKSQLBlob;
+    }
+    return LKSQLText;
+}
+-(NSString *)getParameterString
+{
+    NSMutableString* pars = [NSMutableString string];
+    for (int i=0; i<_columnNameArr.count; i++) {
+        [pars appendFormat:@"%@ %@",[_columnNameArr objectAtIndex:i],[_columnTypeArr objectAtIndex:i]];
+        if(i+1 !=_columnNameArr.count)
+        {
+            [pars appendString:@","];
+        }
+    }
+    return pars;
 }
 //<2>
 - (void)insertInfo:(PlaceModel *)model andID:(NSInteger)ID {
