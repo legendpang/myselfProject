@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
-
 #import "PlaceModel.h"
+#import "DetailFoodModel.h"
 #import "FoodModel.h"
 
 #define LKSQLText @"text"
@@ -26,7 +26,7 @@
 @property (nonatomic, strong) NSMutableArray * columnTypeArr;//数据库表列类型（int，string。。。。。。）
 typedef enum
 {
-    placeModel = 0,
+    detailFoodModel = 0,
     foodModel = 1,
 }
 FSO;

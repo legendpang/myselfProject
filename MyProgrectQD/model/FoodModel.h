@@ -10,6 +10,8 @@
 
 @interface FoodModel : NSObject
 
-//@property(nonatomic,strong)NSString *
+@property(nonatomic,strong)NSString * foodName;
+@property(nonatomic,strong)NSString * foodType;
+@property(nonatomic,assign)int foodtag;
 
 @end

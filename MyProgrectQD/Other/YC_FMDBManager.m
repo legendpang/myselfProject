@@ -73,7 +73,8 @@
 //一个数据库创建多张表
 -(void)creatTable
 {
-    NSArray * tableNameArr = @[@"placeModel",@"foodModel"];
+    //此数组存放数据库表名字
+    NSArray * tableNameArr = @[@"detailFoodModel",@"foodModel"];
     for (int i=0; i<tableNameArr.count; i++) {
         NSString * sql = [self setTableSql:i andTableName:tableNameArr];
         BOOL success = [_fmdb executeUpdate:sql];
@@ -90,12 +91,12 @@
    
     NSString * sql = @"";
     switch (type) {
-        case placeModel:{
-        sql = [NSString stringWithFormat:@"create table if not exists %@ (ID integer primary key,%@)",[tableNameArr objectAtIndex:type],[self setSql:[[tableNameArr objectAtIndex:type] uppercaseString]]];
+        case detailFoodModel:{
+        sql = [NSString stringWithFormat:@"create table if not exists %@ (ID integer primary key,%@)",[tableNameArr objectAtIndex:type],[self setSql:[self setfirstItemUP:[tableNameArr objectAtIndex:type]]]];
         }
             break;
         case foodModel:{
-            sql = [NSString stringWithFormat:@"create table if not exists %@ (ID integer primary key,%@)",[tableNameArr objectAtIndex:type],[self setSql:[[tableNameArr objectAtIndex:type] uppercaseString]]];
+            sql = [NSString stringWithFormat:@"create table if not exists %@ (ID integer primary key,%@)",[tableNameArr objectAtIndex:type],[self setSql:[self setfirstItemUP:[tableNameArr objectAtIndex:type]]]];
             ;
         }
         default:
@@ -193,6 +194,14 @@ const static NSString* blobtypestring = @"NSDataUIImage";
     }
     return pars;
 }
+-(NSString *)setfirstItemUP:(NSString *)string
+{
+    NSString * str = @"";
+    NSString * firstStr = [NSString stringWithFormat:@"%c",[string characterAtIndex:0]];
+    str = [NSString stringWithFormat:@"%@%@",[firstStr uppercaseString],[string substringFromIndex:1]];
+    return str;
+}
+
 //<2>
 - (void)insertInfo:(PlaceModel *)model andID:(NSInteger)ID {
     //<1>创建sql语句
