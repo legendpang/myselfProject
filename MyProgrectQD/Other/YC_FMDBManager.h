@@ -22,8 +22,9 @@
 
 @interface YC_FMDBManager : NSObject
 @property (nonatomic, strong) FMDatabase *fmdb;
-@property (nonatomic, strong) NSMutableArray * columnNameArr;//数据库表列名字
-@property (nonatomic, strong) NSMutableArray * columnTypeArr;//数据库表列类型（int，string。。。。。。）
+@property (nonatomic, strong) NSMutableArray * columnNameArr;//存放每一个数据库表的字段名字
+@property (nonatomic, strong) NSMutableArray * columnTypeArr;//存放数据库表列类型（int，string。。。。。。）
+@property (nonatomic, strong) NSArray * tableNameArr;//存放数据库表名
 typedef enum
 {
     detailFoodModel = 0,
@@ -34,7 +35,7 @@ FSO;
 + (YC_FMDBManager *)shareManager;
 
 //增加数据
-- (void)insertInfo:(PlaceModel *)model andID:(NSInteger)ID;
+- (void)insertInfo:(id)model andType:(FSO)type;
 
 //修改数据
 //- (void)updataInfo:(PlaceModel *)model andID:(NSInteger)ID;

@@ -13,7 +13,7 @@
 #import "DetailPlaceViewController.h"
 #import "DetailFoodViewController.h"
 #import "AppDelegate.h"
-
+#import "FoodModel.h"
 
 @interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
@@ -37,6 +37,12 @@
 }
 -(void)rightClick:(UIBarButtonItem *)button
 {
+     YC_FMDBManager * manager = [YC_FMDBManager shareManager];
+    FoodModel * modle = [[FoodModel alloc] init];
+    modle.foodName = @"干炸里脊";
+    modle.foodType = @"鲁菜";
+    modle.foodtag = 100;
+    [manager insertInfo:modle andType:foodModel];
     [_tableView reloadData];
 }
 

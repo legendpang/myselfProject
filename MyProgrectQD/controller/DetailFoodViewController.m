@@ -166,7 +166,7 @@ static NSString * iden = @"id";
    
     YC_FMDBManager * manager = [YC_FMDBManager shareManager];
     NSArray * array = [manager allPersonInfos];
-    [manager insertInfo:_myapp andID:array.count+1];
+    //[manager insertInfo:_myapp andID:array.count+1];
     [_button setTitle:@"已收藏" forState:UIControlStateNormal];
     
     

@@ -23,6 +23,8 @@
    
     self = [super init];
     if (self) {
+        
+        _tableNameArr = @[@"detailFoodModel",@"foodModel"];
         if (_columnNameArr==nil) {
             _columnNameArr = [[NSMutableArray alloc] init];
         }
@@ -74,12 +76,11 @@
 -(void)creatTable
 {
     //此数组存放数据库表名字
-    NSArray * tableNameArr = @[@"detailFoodModel",@"foodModel"];
-    for (int i=0; i<tableNameArr.count; i++) {
-        NSString * sql = [self setTableSql:i andTableName:tableNameArr];
+    for (int i=0; i<_tableNameArr.count; i++) {
+        NSString * sql = [self setTableSql:i andTableName:_tableNameArr];
         BOOL success = [_fmdb executeUpdate:sql];
         if (success) {
-            NSLog(@"-%@表创建成功",tableNameArr[i]);
+            NSLog(@"-%@表创建成功",_tableNameArr[i]);
         }else{
             NSLog(@"%@",_fmdb.lastErrorMessage);
         }
@@ -201,22 +202,58 @@ const static NSString* blobtypestring = @"NSDataUIImage";
     str = [NSString stringWithFormat:@"%@%@",[firstStr uppercaseString],[string substringFromIndex:1]];
     return str;
 }
-
+//取某个model的所有属性值
+-(id)valueModel:(id)model andModelKey:(id)valueKey{
+    if (valueKey == nil) {
+        return @"";
+    }
+    id value = [model valueForKey:valueKey];
+    if(value == nil)
+    {
+        return @"";
+    }
+    return value;
+}
 //<2>
-- (void)insertInfo:(PlaceModel *)model andID:(NSInteger)ID {
+/*
+ id value = [model valueForKey:valueKey];
+ 
+ 
+ */
+- (void)insertInfo:(id)model andType:(FSO)type{
+    
+    [self getAllProperties:[self setfirstItemUP:[_tableNameArr objectAtIndex:type]]];
+    NSMutableString * columnNameStr = [NSMutableString string];
+    NSMutableString * stubsStr = [NSMutableString string];
+    NSMutableArray * valueForModelArr = [NSMutableArray array];
+    for (int i=0; i<_columnNameArr.count; i++) {
+        [columnNameStr appendFormat:@"%@",[_columnNameArr objectAtIndex:i]];
+        [stubsStr appendFormat:@"?"];
+        if(i+1 !=_columnNameArr.count)
+        {
+            [columnNameStr appendString:@","];
+            [stubsStr appendFormat:@","];
+        }
+        [valueForModelArr addObject:[self valueModel:model andModelKey:[_columnNameArr objectAtIndex:i]]];
+    }
+    
     //<1>创建sql语句
-    NSString *sql = @"insert into MyApp(ID,name,characteristic,cid,image,tag,iId) values(?,?,?,?,?,?,?)";
+   // NSString *sql = @"insert into MyApp(ID,name,characteristic,cid,image,tag,iId) values(?,?,?,?,?,?,?)";
+    NSString *newsql = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",[_tableNameArr objectAtIndex:type],columnNameStr,stubsStr];
+    
+    
     //?占位符，需要写入的元素   ［注意］不能存放基本类型
     //<2>插入元素
-    NSString *name = model.name;
-    NSString *characteristic  = model.characteristic;
-    NSString *cid = model.cid;
-   NSString * image = model.image;
-    //将NSInteger转为NSNumber
-    NSNumber *number = [NSNumber numberWithInteger:ID];
-    NSString * tag = model.tag;
-    NSString * iId = model.iId;
-    BOOL success = [_fmdb executeUpdate:sql,number,name,characteristic,cid,image,tag,iId];
+//    NSString *name = model.name;
+//    NSString *characteristic  = model.characteristic;
+//    NSString *cid = model.cid;
+//    NSString * image = model.image;
+//    //将NSInteger转为NSNumber
+//    //NSNumber *number = [NSNumber numberWithInteger:ID];
+//    NSString * tag = model.tag;
+//    NSString * iId = model.iId;
+   // BOOL success = [_fmdb executeUpdate:newsql,number,name,characteristic,cid,image,tag,iId];
+    BOOL success = [_fmdb executeUpdate:newsql withArgumentsInArray:valueForModelArr];
     if (success) {
         NSLog(@"成功插入元素");
     }else{
