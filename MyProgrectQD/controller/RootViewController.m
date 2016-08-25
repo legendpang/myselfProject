@@ -19,6 +19,8 @@
    
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    // 隐藏导航栏
+    self.navigationController.navigationBarHidden = NO;
     //字体颜色
     self.tabBarController.tabBar.tintColor = [UIColor purpleColor];
     self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:208/255.0 green:223/255.0 blue:185/255.0 alpha:1.0];

@@ -30,12 +30,12 @@ typedef enum
     detailFoodModel = 0,
     foodModel = 1,
 }
-FSO;
+FOS;
 //单例：为了保证整个有且只有一个数据库
 + (YC_FMDBManager *)shareManager;
 
 //增加数据
-- (void)insertInfo:(id)model andType:(FSO)type;
+- (void)insertInfo:(id)model andType:(FOS)type;
 
 //修改数据
 //- (void)updataInfo:(PlaceModel *)model andID:(NSInteger)ID;
@@ -45,4 +45,8 @@ FSO;
 
 //删除
 - (void)deletePersonInfo:(NSString *)name;
+@end
+@interface NSString(LKisEmpty)
+-(BOOL)isEmptyWithTrim;
+-(NSString*)stringWithTrim;
 @end

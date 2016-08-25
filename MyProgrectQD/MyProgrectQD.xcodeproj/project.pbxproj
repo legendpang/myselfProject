@@ -223,6 +223,10 @@
 		BCED3FCA1BD8FB080079675F /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FC91BD8FB080079675F /* PlaceModel.m */; };
 		BCED3FD11BD9118F0079675F /* image_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCED3FD01BD9118F0079675F /* image_back@2x.png */; };
 		F30271061CBD3599004E1661 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F30271051CBD3599004E1661 /* MyNavigationBar.m */; };
+		F3678B121D6DA8DF00E2158B /* CompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B0B1D6DA8DF00E2158B /* CompanyModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F3678B131D6DA8DF00E2158B /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B0D1D6DA8DF00E2158B /* DataFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F3678B141D6DA8DF00E2158B /* LKDaoBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B0F1D6DA8DF00E2158B /* LKDaoBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F3678B151D6DA8DF00E2158B /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B111D6DA8DF00E2158B /* SandboxFile.m */; };
 		F379EE651CBBCCAC009D1EF5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE641CBBCCAC009D1EF5 /* libz.tbd */; };
 		F379EE671CBBCCC9009D1EF5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE661CBBCCC9009D1EF5 /* libsqlite3.tbd */; };
 		F379EE691CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE681CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd */; };
@@ -582,6 +586,14 @@
 		BCED3FD01BD9118F0079675F /* image_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image_back@2x.png"; sourceTree = "<group>"; };
 		F30271041CBD3599004E1661 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
 		F30271051CBD3599004E1661 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
+		F3678B0A1D6DA8DF00E2158B /* CompanyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyModel.h; sourceTree = "<group>"; };
+		F3678B0B1D6DA8DF00E2158B /* CompanyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyModel.m; sourceTree = "<group>"; };
+		F3678B0C1D6DA8DF00E2158B /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
+		F3678B0D1D6DA8DF00E2158B /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
+		F3678B0E1D6DA8DF00E2158B /* LKDaoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDaoBase.h; sourceTree = "<group>"; };
+		F3678B0F1D6DA8DF00E2158B /* LKDaoBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDaoBase.m; sourceTree = "<group>"; };
+		F3678B101D6DA8DF00E2158B /* SandboxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandboxFile.h; sourceTree = "<group>"; };
+		F3678B111D6DA8DF00E2158B /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
 		F379EE641CBBCCAC009D1EF5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F379EE661CBBCCC9009D1EF5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F379EE681CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
@@ -856,6 +868,7 @@
 				BCB496C91BDB326E00850862 /* Security.framework */,
 				BCB496C71BDB326500850862 /* SystemConfiguration.framework */,
 				BCB496C51BDB325A00850862 /* CoreLocation.framework */,
+				F3678B091D6DA8DF00E2158B /* DataFactoryFMDB */,
 				BCDC725E1BD7C37300411C24 /* Material */,
 				BCDC72541BD7AE3700411C24 /* Other */,
 				BCDC72411BD7ABDE00411C24 /* ThirdLib */,
@@ -1295,6 +1308,21 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		F3678B091D6DA8DF00E2158B /* DataFactoryFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				F3678B0A1D6DA8DF00E2158B /* CompanyModel.h */,
+				F3678B0B1D6DA8DF00E2158B /* CompanyModel.m */,
+				F3678B0C1D6DA8DF00E2158B /* DataFactory.h */,
+				F3678B0D1D6DA8DF00E2158B /* DataFactory.m */,
+				F3678B0E1D6DA8DF00E2158B /* LKDaoBase.h */,
+				F3678B0F1D6DA8DF00E2158B /* LKDaoBase.m */,
+				F3678B101D6DA8DF00E2158B /* SandboxFile.h */,
+				F3678B111D6DA8DF00E2158B /* SandboxFile.m */,
+			);
+			path = DataFactoryFMDB;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1512,6 +1540,7 @@
 				BC737D2C1BDE125800C56CE7 /* YC_FMDBManager.m in Sources */,
 				BC8B28C41BE6FD9F0087D051 /* DetailFoodCell.m in Sources */,
 				BCED3FB51BD8F1B20079675F /* UIScrollView+MJExtension.m in Sources */,
+				F3678B121D6DA8DF00E2158B /* CompanyModel.m in Sources */,
 				BCED3FBF1BD8F1B20079675F /* SDWebImageManager.m in Sources */,
 				BCED3FB91BD8F1B20079675F /* NSData+ImageContentType.m in Sources */,
 				BCC85BED1BE22CA800E66303 /* StarView.m in Sources */,
@@ -1522,6 +1551,7 @@
 				BCED3FAD1BD8F1B20079675F /* MJRefreshBackGifFooter.m in Sources */,
 				BCED3F401BD8D9C40079675F /* AFHTTPRequestOperationManager.m in Sources */,
 				BCED3F4B1BD8D9C40079675F /* UIButton+AFNetworking.m in Sources */,
+				F3678B131D6DA8DF00E2158B /* DataFactory.m in Sources */,
 				BCED3FB81BD8F1B20079675F /* MKAnnotationView+WebCache.m in Sources */,
 				BCED3FA91BD8F1B20079675F /* MJRefreshHeader.m in Sources */,
 				BCED3F491BD8D9C40079675F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -1543,6 +1573,7 @@
 				BC737D231BDE11B800C56CE7 /* FMDatabase.m in Sources */,
 				BCC85BC71BE1C90E00E66303 /* SecondDetailCell.m in Sources */,
 				BCED3F521BD8D9EA0079675F /* Net.m in Sources */,
+				F3678B141D6DA8DF00E2158B /* LKDaoBase.m in Sources */,
 				BCC85BE01BE1D63400E66303 /* TAAnimatedDotView.m in Sources */,
 				F30271061CBD3599004E1661 /* MyNavigationBar.m in Sources */,
 				BCE1ACAF1BDCDFB000A406BD /* DetailPlaceCell.m in Sources */,
@@ -1579,6 +1610,7 @@
 				BCED3FAF1BD8F1B20079675F /* MJRefreshBackStateFooter.m in Sources */,
 				BCC85BE21BE1D63400E66303 /* TAPageControl.m in Sources */,
 				BCDC721B1BD791AA00411C24 /* main.m in Sources */,
+				F3678B151D6DA8DF00E2158B /* SandboxFile.m in Sources */,
 				BCED3F3F1BD8D9C40079675F /* AFHTTPRequestOperation.m in Sources */,
 				BCC85BE31BE1D63400E66303 /* SDCollectionViewCell.m in Sources */,
 				BCED3FCA1BD8FB080079675F /* PlaceModel.m in Sources */,

@@ -87,7 +87,7 @@
     }
 }
 
-- (NSString *)setTableSql:(FSO)type andTableName:(NSArray *)tableNameArr
+- (NSString *)setTableSql:(FOS)type andTableName:(NSArray *)tableNameArr
 {
    
     NSString * sql = @"";
@@ -214,13 +214,21 @@ const static NSString* blobtypestring = @"NSDataUIImage";
     }
     return value;
 }
-//<2>
-/*
- id value = [model valueForKey:valueKey];
- 
- 
- */
-- (void)insertInfo:(id)model andType:(FSO)type{
+#pragma mark--查询数据元素
+-(NSArray*)syncSearchWhere:(NSDictionary *)where orderBy:(NSString *)columeName offset:(int)offset count:(int)count Classtype:(FOS)type
+{
+    NSMutableString* query = [NSMutableString stringWithFormat:@"select rowid,* from %@ ",_tableNameArr[type]];
+    NSMutableArray* values = [NSMutableArray arrayWithCapacity:0];
+    if(where !=nil&& where.count>0)
+    {
+        NSString* wherekey = [self dictionaryToSqlWhere:where andValues:values];
+        [query appendFormat:@" where %@",wherekey];
+    }
+    return nil;
+}
+
+//<2>向数据库插入元素
+- (void)insertInfo:(id)model andType:(FOS)type{
     
     [self getAllProperties:[self setfirstItemUP:[_tableNameArr objectAtIndex:type]]];
     NSMutableString * columnNameStr = [NSMutableString string];
@@ -306,5 +314,58 @@ const static NSString* blobtypestring = @"NSDataUIImage";
         NSLog(@"%@",_fmdb.lastErrorMessage);
     }
 }
+///******工具类*******/////
+-(NSString*)dictionaryToSqlWhere:(NSDictionary*)dic andValues:(NSMutableArray*)values
+{
+    NSMutableString* wherekey = [NSMutableString stringWithCapacity:0];
+    if(dic != nil && dic.count >0 )
+    {
+        NSArray* keys = dic.allKeys;
+        for (int i=0; i< keys.count;i++) {
+            
+            NSString* key = [keys objectAtIndex:i];
+            id va = [dic objectForKey:key];
+            if([va isKindOfClass:[NSArray class]]||[va isKindOfClass:[NSMutableArray class]])
+            {
+                NSArray* vlist = va;
+                for (int j=0; j<vlist.count; j++) {
+                    id subvalue = [vlist objectAtIndex:j];
+                    if(wherekey.length > 0)
+                    {
+                        if(j >0)
+                        {
+                            [wherekey appendFormat:@" or %@ = ? ",key];
+                        }
+                        else{
+                            [wherekey appendFormat:@" and %@ = ? ",key];
+                        }
+                    }
+                    else
+                    {
+                        [wherekey appendFormat:@" %@ = ? ",key];
+                    }
+                    [values addObject:subvalue];
+                }
+            }
+            else
+            {
+                if(wherekey.length > 0)
+                {
+                    [wherekey appendFormat:@" and %@ = ? ",key];
+                }
+                else
+                {
+                    [wherekey appendFormat:@" %@ = ? ",key];
+                }
+                [values addObject:va];
+            }
+            
+        }
+    }
+    return wherekey;
+}
+
+
 
 @end
+

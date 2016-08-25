@@ -14,7 +14,8 @@
 #import "DetailFoodViewController.h"
 #import "AppDelegate.h"
 #import "FoodModel.h"
-
+#import "DataFactory.h"
+#import "CompanyModel.h"
 @interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * xdataArray;
@@ -26,7 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    DataFactory* df = [DataFactory shardDataFactory];
+    [df CreateDataBase];
+    [df CreateTable];
     self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view.
     self.navigationItem.title = _headTitle;
@@ -37,23 +40,21 @@
 }
 -(void)rightClick:(UIBarButtonItem *)button
 {
-     YC_FMDBManager * manager = [YC_FMDBManager shareManager];
-    FoodModel * modle = [[FoodModel alloc] init];
-    modle.foodName = @"干炸里脊";
-    modle.foodType = @"鲁菜";
-    modle.foodtag = 100;
-    [manager insertInfo:modle andType:foodModel];
+    CompanyModel * modle= [[CompanyModel alloc] init];
+    modle.shortName = @"foewjfoewjfow";
+    modle.orgid = @"8100001";
+    [[DataFactory shardDataFactory] insertToDB:modle Classtype:company];
     [_tableView reloadData];
 }
 
 -(void)creatTableViewUI
 {
     _xdataArray = [[NSMutableArray alloc]init];
-    YC_FMDBManager * manager = [YC_FMDBManager shareManager];
-    NSArray * array = [manager allPersonInfos];
-    for (PlaceModel * model in array) {
-        [_xdataArray addObject:model];
-    }
+   // YC_FMDBManager * manager = [YC_FMDBManager shareManager];
+//    NSArray * array = [manager allPersonInfos];
+//    for (PlaceModel * model in array) {
+//        [_xdataArray addObject:model];
+//    }
   //  NSLog(@"%@",array);
    // _xdataArray = [NSMutableArray arrayWithArray:array];
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
