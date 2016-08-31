@@ -12,4 +12,5 @@
 + (void)saveValue:(id)value forKey:(NSString *)key;
 + (id)getValueForKey:(NSString *)key;
 + (UIBarButtonItem *)barButtonTitle:(NSString *)title Image:(NSString *)image Target:(id)target Sel:(SEL)selector;
++ (void)createFMDB;
 @end

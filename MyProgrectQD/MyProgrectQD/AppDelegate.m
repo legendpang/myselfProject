@@ -33,10 +33,11 @@
         self.window.rootViewController = tab;
     }else {
         [Function saveValue:@"FirstLaunch" forKey:FIRST_START];
+        [Function createFMDB];
         NSLog(@"第一次启动");
         WelcomeViewController * welcomePage = [[WelcomeViewController alloc] init];
         self.window.rootViewController = welcomePage;
-               //此方法是几秒之后执行block中的代码
+        //此方法是几秒之后执行block中的代码
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                    
        });

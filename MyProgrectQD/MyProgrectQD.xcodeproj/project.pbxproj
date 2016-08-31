@@ -230,6 +230,7 @@
 		F379EE651CBBCCAC009D1EF5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE641CBBCCAC009D1EF5 /* libz.tbd */; };
 		F379EE671CBBCCC9009D1EF5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE661CBBCCC9009D1EF5 /* libsqlite3.tbd */; };
 		F379EE691CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE681CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd */; };
+		F3A52CD91D76A96A006C1AFC /* PlacetestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A52CD81D76A96A006C1AFC /* PlacetestModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -597,6 +598,8 @@
 		F379EE641CBBCCAC009D1EF5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F379EE661CBBCCC9009D1EF5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		F379EE681CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		F3A52CD71D76A96A006C1AFC /* PlacetestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacetestModel.h; sourceTree = "<group>"; };
+		F3A52CD81D76A96A006C1AFC /* PlacetestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacetestModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1313,6 +1316,8 @@
 			children = (
 				F3678B0A1D6DA8DF00E2158B /* CompanyModel.h */,
 				F3678B0B1D6DA8DF00E2158B /* CompanyModel.m */,
+				F3A52CD71D76A96A006C1AFC /* PlacetestModel.h */,
+				F3A52CD81D76A96A006C1AFC /* PlacetestModel.m */,
 				F3678B0C1D6DA8DF00E2158B /* DataFactory.h */,
 				F3678B0D1D6DA8DF00E2158B /* DataFactory.m */,
 				F3678B0E1D6DA8DF00E2158B /* LKDaoBase.h */,
@@ -1592,6 +1597,7 @@
 				BCED3F471BD8D9C40079675F /* AFURLSessionManager.m in Sources */,
 				BCED3F461BD8D9C40079675F /* AFURLResponseSerialization.m in Sources */,
 				BCC85BC31BE1C36500E66303 /* SecondDetailViewController.m in Sources */,
+				F3A52CD91D76A96A006C1AFC /* PlacetestModel.m in Sources */,
 				BCED3FA81BD8F1B20079675F /* MJRefreshFooter.m in Sources */,
 				BCED3FBE1BD8F1B20079675F /* SDWebImageDownloaderOperation.m in Sources */,
 				BCDC721E1BD791AA00411C24 /* AppDelegate.m in Sources */,

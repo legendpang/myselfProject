@@ -44,6 +44,8 @@
 -(void)CreateTable
 {
     [[[CompanyModelBase                 alloc]initWithDBQueue:self.queue]autorelease];
+    [[[PlacetestModelBase                 alloc]initWithDBQueue:self.queue]autorelease];
+    
 }
 -(id)Factory:(FSO)type
 {
@@ -55,7 +57,10 @@
         case company:
             result=[[[CompanyModelBase               alloc]initWithDBQueue:self.queue]autorelease];
             break;
-                default:
+        case placeTest:
+            result =[[[PlacetestModelBase                 alloc]initWithDBQueue:self.queue]autorelease];
+            break;
+        default:
             break;
     }
     return result;

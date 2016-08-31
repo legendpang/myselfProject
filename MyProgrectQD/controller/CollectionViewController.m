@@ -16,6 +16,7 @@
 #import "FoodModel.h"
 #import "DataFactory.h"
 #import "CompanyModel.h"
+#import "PlacetestModel.h"
 @interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * xdataArray;
@@ -27,9 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DataFactory* df = [DataFactory shardDataFactory];
-    [df CreateDataBase];
-    [df CreateTable];
     self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view.
     self.navigationItem.title = _headTitle;
@@ -44,6 +42,10 @@
     modle.shortName = @"foewjfoewjfow";
     modle.orgid = @"8100001";
     [[DataFactory shardDataFactory] insertToDB:modle Classtype:company];
+    PlacetestModel * model = [[PlacetestModel alloc] init];
+    model.placeName = @"青岛栈桥";
+    model.placePrice = @"免费";
+    [[DataFactory shardDataFactory] insertToDB:model Classtype:placeTest];
     [_tableView reloadData];
 }
 

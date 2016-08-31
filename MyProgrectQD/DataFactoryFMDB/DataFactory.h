@@ -10,7 +10,7 @@
 #import "SandboxFile.h"
 #import "FMDatabaseQueue.h"
 #import "CompanyModel.h"
-
+#import "PlacetestModel.h"
 #define GetDataBasePath [SandboxFile GetPathForDocuments:@"UMCall.db" inDir:@"DataBase"]
 
 @interface DataFactory : NSObject
@@ -19,7 +19,7 @@
 typedef enum
 {
     company,
-   
+    placeTest,
 }
 FSO;//这个是枚举是区别不同的实体,我这边就写一个test;
 +(DataFactory *)shardDataFactory;

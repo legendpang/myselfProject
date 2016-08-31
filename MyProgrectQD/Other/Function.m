@@ -7,7 +7,7 @@
 //
 
 #import "Function.h"
-
+#import "DataFactory.h"
 @implementation Function
 +(id)getValueForKey:(NSString *)key
 {
@@ -27,5 +27,10 @@
     UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     return barButton;
     
+}
++ (void)createFMDB{
+    DataFactory* df = [DataFactory shardDataFactory];
+    [df CreateDataBase];
+    [df CreateTable];
 }
 @end
