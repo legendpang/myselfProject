@@ -19,13 +19,12 @@
    
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    // 隐藏导航栏
-    self.navigationController.navigationBarHidden = NO;
+#pragma mark---隐藏导航栏属性(隐藏之后可以使用自定义的导航栏来替换)；
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     //字体颜色
     self.tabBarController.tabBar.tintColor = [UIColor purpleColor];
     self.tabBarController.tabBar.barTintColor = [UIColor colorWithRed:208/255.0 green:223/255.0 blue:185/255.0 alpha:1.0];
-    
-    
     _page = 2;
     _dataArray = [[NSMutableArray alloc]init];
     [self createTableView];

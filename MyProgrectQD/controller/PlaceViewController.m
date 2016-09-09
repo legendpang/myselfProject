@@ -13,7 +13,7 @@
 #import "MyNavigationBar.h"
 static NSString * place = @"123";
 
-@interface PlaceViewController ()<UISearchDisplayDelegate>
+@interface PlaceViewController ()<UISearchDisplayDelegate,MyNavigationDelegate>
 @property(nonatomic,strong)NSString * place;
 @property(nonatomic,strong)NSMutableArray * resultArray;
 @property(nonatomic,strong)UISearchBar * searchBar;
@@ -28,18 +28,21 @@ static NSString * place = @"123";
     _place = @"place";
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"景区景点";
-//    MyNavigationBar * mynav = [[MyNavigationBar alloc]init];
-//    mynav.frame = self.navigationController.navigationBar.frame;
-//    [self.navigationController.navigationBar addSubview:mynav];
     _resultArray = [[NSMutableArray alloc] init];
     self.urlStr = testUrl;
     [self.tableView.header beginRefreshing];
-   
+    
+    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"景区景点" withColor:[UIColor whiteColor]];
+    mynav.delegate = self;
+    [mynav setGoBackButton];
+    [self.view addSubview:mynav];
     [self createSearchUI];
     
     
 }
-
+-(void)myNavigationGoback{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)createSearchUI
 {
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];

@@ -10,7 +10,7 @@
 #import "FirstMCell.h"
 #import "PlaceViewController.h"
 #import "FoodViewController.h"
-
+#import "MyNavigationBar.h"
 @interface FirstViewController () <ChangeViewControll>
 
 @end
@@ -33,11 +33,12 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.footer = nil;
     self.tableView.header = nil;
     self.tableView.scrollEnabled = YES;
-    self.navigationController.navigationBar.barTintColor = [UIColor cyanColor];
+    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"首页" withColor:[UIColor blueColor]];
+    [self.view addSubview:mynav];
         
 }
 

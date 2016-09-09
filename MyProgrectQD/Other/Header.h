@@ -15,8 +15,8 @@
 
 #define TabBar_Title @[@"首页",@"历史文化",@"地图",@"设置"]
 
-#define TabBar_Image @[@"tab_icon_dingdan@2x",@"tab_icon_home@2x",@"qd_shome",@"tab_icon_me@2x"]
-#define TabBar_SelectImage @[@"tab_icon_dingdan_sel@2x",@"tab_icon_home_sel@2x",@"qd_home",@"tab_icon_me_sel@2x"]
+#define TabBar_Image @[@"tab_icon_dingdan",@"tab_icon_home",@"qd_shome",@"tab_icon_me"]
+#define TabBar_SelectImage @[@"tab_icon_dingdan_sel",@"tab_icon_home_sel",@"qd_home",@"tab_icon_me_sel"]
 #define FIRST_START @"first_start"
 
 
