@@ -8,7 +8,7 @@
 //http://mtravel.qingdaonews.com/index.php?map_x=40.035683&page=1&order=2&class=%E6%8E%92%E5%BA%8F&map_y=116.364182&key=&r=mobile/view/list
 #import "RootViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -21,6 +21,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 #pragma mark---隐藏导航栏属性(隐藏之后可以使用自定义的导航栏来替换)；
     self.navigationController.navigationBarHidden = YES;
+    //设置右滑返回
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     //字体颜色
     self.tabBarController.tabBar.tintColor = [UIColor purpleColor];

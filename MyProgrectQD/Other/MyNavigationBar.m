@@ -20,10 +20,13 @@
         self.frame = CGRectMake(0, 0, iViewWidth, 64);
         self.backgroundColor = color;
         [self setTitleLabel:title];
-        //设置分割线
-        UILabel * lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, iViewWidth, 1)];
-        lineLabel.backgroundColor = [UIColor lightGrayColor];
-        [self addSubview:lineLabel];
+        if ([color isEqual:[UIColor whiteColor]]) {
+            //设置分割线
+            UILabel * lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, iViewWidth, 1)];
+            lineLabel.backgroundColor = [UIColor lightGrayColor];
+            [self addSubview:lineLabel];
+        }
+       
     }
     return self;
 }
