@@ -172,6 +172,7 @@
 		BCED3FC61BD8F1B20079675F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FA21BD8F1B20079675F /* UIImageView+WebCache.m */; };
 		BCED3FC71BD8F1B20079675F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FA41BD8F1B20079675F /* UIView+WebCacheOperation.m */; };
 		BCED3FCA1BD8FB080079675F /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FC91BD8FB080079675F /* PlaceModel.m */; };
+		F33190AC1D868FD7000D70AC /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33190AB1D868FD7000D70AC /* Toast+UIView.m */; };
 		F338F4621D825E3C00D73544 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F338F4611D825E3C00D73544 /* MyNavigationBar.m */; };
 		F3678B121D6DA8DF00E2158B /* CompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B0B1D6DA8DF00E2158B /* CompanyModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F3678B131D6DA8DF00E2158B /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B0D1D6DA8DF00E2158B /* DataFactory.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -485,6 +486,8 @@
 		BCED3FA41BD8F1B20079675F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		BCED3FC81BD8FB080079675F /* PlaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceModel.h; sourceTree = "<group>"; };
 		BCED3FC91BD8FB080079675F /* PlaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceModel.m; sourceTree = "<group>"; };
+		F33190AA1D868FD7000D70AC /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		F33190AB1D868FD7000D70AC /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		F338F4601D825E3C00D73544 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
 		F338F4611D825E3C00D73544 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
 		F3678B0A1D6DA8DF00E2158B /* CompanyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyModel.h; sourceTree = "<group>"; };
@@ -916,6 +919,8 @@
 			children = (
 				BC737D2A1BDE125800C56CE7 /* YC_FMDBManager.h */,
 				BC737D2B1BDE125800C56CE7 /* YC_FMDBManager.m */,
+				F33190AA1D868FD7000D70AC /* Toast+UIView.h */,
+				F33190AB1D868FD7000D70AC /* Toast+UIView.m */,
 				BCDC72551BD7AE4800411C24 /* Header.h */,
 				BCDC72561BD7B58F00411C24 /* Function.h */,
 				BCDC72571BD7B58F00411C24 /* Function.m */,
@@ -1305,6 +1310,7 @@
 				BCB496B51BDB276D00850862 /* FoodViewController.m in Sources */,
 				BCED3FBC1BD8F1B20079675F /* SDWebImageDecoder.m in Sources */,
 				BCED3FC01BD8F1B20079675F /* SDWebImagePrefetcher.m in Sources */,
+				F33190AC1D868FD7000D70AC /* Toast+UIView.m in Sources */,
 				BCED3F441BD8D9C40079675F /* AFURLConnectionOperation.m in Sources */,
 				BC737D161BDDD33900C56CE7 /* FirstMCell.m in Sources */,
 				BCED3FC51BD8F1B20079675F /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1484,6 +1490,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1528,6 +1535,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1555,6 +1563,7 @@
 					"$(PROJECT_DIR)/ThirdLib/Release-iphoneos",
 					"$(PROJECT_DIR)/ThirdLib/umeng_ios_social_sdk_4.2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = MyProgrectQD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1585,6 +1594,7 @@
 					"$(PROJECT_DIR)/ThirdLib/Release-iphoneos",
 					"$(PROJECT_DIR)/ThirdLib/umeng_ios_social_sdk_4.2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = MyProgrectQD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

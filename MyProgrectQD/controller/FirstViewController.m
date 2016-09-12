@@ -37,7 +37,7 @@
     self.tableView.footer = nil;
     self.tableView.header = nil;
     self.tableView.scrollEnabled = YES;
-    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"首页" withColor:[UIColor blueColor]];
+    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"首页" withColor:[UIColor whiteColor]];
     [self.view addSubview:mynav];
         
 }

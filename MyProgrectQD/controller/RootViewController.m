@@ -21,7 +21,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 #pragma mark---隐藏导航栏属性(隐藏之后可以使用自定义的导航栏来替换)；
     self.navigationController.navigationBarHidden = YES;
-    //设置右滑返回
+    //设置右滑返回{注意添加代理----->UIGestureRecognizerDelegate}
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     //字体颜色

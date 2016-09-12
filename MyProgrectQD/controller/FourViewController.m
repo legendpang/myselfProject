@@ -12,6 +12,7 @@
 #import "AboutusViewController.h"
 #import "UMSocial.h"
 #import "ConnectionUsViewController.h"
+#import "MyNavigationBar.h"
 @interface FourViewController ()<UMSocialUIDelegate>
 
 @property(nonatomic ,strong)NSMutableArray * sdataArray;
@@ -26,7 +27,10 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor blueColor];
-    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"qd_navbar-bg@2x"] forBarMetrics:UIBarMetricsDefault];
+    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"设置" withColor:[UIColor whiteColor]];
+    [self.view addSubview:mynav];
+    
+    
     self.tableView.scrollEnabled = NO;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     NSArray * array = @[@"我的收藏",@"小贴士",@"我要分享",@"联系我们"];

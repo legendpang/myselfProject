@@ -22,7 +22,7 @@
         [self setTitleLabel:title];
         if ([color isEqual:[UIColor whiteColor]]) {
             //设置分割线
-            UILabel * lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, iViewWidth, 1)];
+            UILabel * lineLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 64, iViewWidth, 0.5)];
             lineLabel.backgroundColor = [UIColor lightGrayColor];
             [self addSubview:lineLabel];
         }

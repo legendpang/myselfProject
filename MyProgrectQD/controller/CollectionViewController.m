@@ -17,6 +17,7 @@
 #import "DataFactory.h"
 #import "CompanyModel.h"
 #import "PlacetestModel.h"
+#import "Toast+UIView.h"
 @interface CollectionViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * tableView;
 @property(nonatomic,strong)NSMutableArray * xdataArray;
@@ -34,6 +35,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(rightClick:)];
     [self creatTableViewUI];
+    [self.view makeToast:@"正在刷新数据"];
  
 }
 -(void)rightClick:(UIBarButtonItem *)button
@@ -47,6 +49,7 @@
     model.placePrice = @"免费";
     [[DataFactory shardDataFactory] insertToDB:model Classtype:placeTest];
     [_tableView reloadData];
+    
 }
 
 -(void)creatTableViewUI

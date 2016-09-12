@@ -9,7 +9,7 @@
 #import "SecondViewController.h"
 #import "SecondDetailViewController.h"
 #import "SecondCell.h"
-
+#import "MyNavigationBar.h"
 @interface SecondViewController ()
 
 @end
@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor yellowColor];
+    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"历史文化" withColor:[UIColor blueColor]];
+    [self.view addSubview:mynav];
     self.page = 1;
     self.urlStr = url4;
     [self.tableView.header beginRefreshing];

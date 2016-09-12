@@ -8,7 +8,7 @@
 
 #import "ThirdMapViewController.h"
 #import "AppDelegate.h"
-
+#import "MyNavigationBar.h"
 #import <BaiduMapAPI/BMapKit.h>
 @interface ThirdMapViewController ()<UISearchDisplayDelegate,UISearchBarDelegate,BMKMapViewDelegate, BMKPoiSearchDelegate,BMKGeoCodeSearchDelegate,BMKSuggestionSearchDelegate>
 
@@ -59,6 +59,8 @@
     // Do any additional setup after loading the view.
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:63/255.0 green:130/255.0 blue:81/255.0 alpha:1.0];
+    MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"地图" withColor:[UIColor greenColor]];
+    [self.view addSubview:mynav];
     self.tableView.scrollEnabled = NO;
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorColor = UITableViewCellSeparatorStyleNone;
