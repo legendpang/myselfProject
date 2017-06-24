@@ -172,6 +172,8 @@
 		BCED3FC61BD8F1B20079675F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FA21BD8F1B20079675F /* UIImageView+WebCache.m */; };
 		BCED3FC71BD8F1B20079675F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FA41BD8F1B20079675F /* UIView+WebCacheOperation.m */; };
 		BCED3FCA1BD8FB080079675F /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCED3FC91BD8FB080079675F /* PlaceModel.m */; };
+		F30E75C71EFDF83800116DDA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F30E75C61EFDF83800116DDA /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F30E75CA1EFDF8D500116DDA /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F30E75C91EFDF8D500116DDA /* libicucore.tbd */; };
 		F33190AC1D868FD7000D70AC /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33190AB1D868FD7000D70AC /* Toast+UIView.m */; };
 		F338F4621D825E3C00D73544 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F338F4611D825E3C00D73544 /* MyNavigationBar.m */; };
 		F3678B121D6DA8DF00E2158B /* CompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3678B0B1D6DA8DF00E2158B /* CompanyModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -182,6 +184,7 @@
 		F379EE671CBBCCC9009D1EF5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE661CBBCCC9009D1EF5 /* libsqlite3.tbd */; };
 		F379EE691CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F379EE681CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd */; };
 		F3A52CD91D76A96A006C1AFC /* PlacetestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A52CD81D76A96A006C1AFC /* PlacetestModel.m */; };
+		F3B880F01EFD144700123095 /* RTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B880EF1EFD144700123095 /* RTextLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -486,6 +489,9 @@
 		BCED3FA41BD8F1B20079675F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		BCED3FC81BD8FB080079675F /* PlaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceModel.h; sourceTree = "<group>"; };
 		BCED3FC91BD8FB080079675F /* PlaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceModel.m; sourceTree = "<group>"; };
+		F30E75C51EFDF83800116DDA /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		F30E75C61EFDF83800116DDA /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		F30E75C91EFDF8D500116DDA /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		F33190AA1D868FD7000D70AC /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		F33190AB1D868FD7000D70AC /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		F338F4601D825E3C00D73544 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
@@ -503,6 +509,8 @@
 		F379EE681CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		F3A52CD71D76A96A006C1AFC /* PlacetestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacetestModel.h; sourceTree = "<group>"; };
 		F3A52CD81D76A96A006C1AFC /* PlacetestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacetestModel.m; sourceTree = "<group>"; };
+		F3B880EE1EFD144700123095 /* RTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTextLabel.h; sourceTree = "<group>"; };
+		F3B880EF1EFD144700123095 /* RTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTextLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +518,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30E75CA1EFDF8D500116DDA /* libicucore.tbd in Frameworks */,
 				F379EE691CBBCCE0009D1EF5 /* libstdc++.6.0.9.tbd in Frameworks */,
 				F379EE671CBBCCC9009D1EF5 /* libsqlite3.tbd in Frameworks */,
 				F379EE651CBBCCAC009D1EF5 /* libz.tbd in Frameworks */,
@@ -760,6 +769,7 @@
 				BCDC72171BD791AA00411C24 /* MyProgrectQD */,
 				BCDC72311BD791AA00411C24 /* MyProgrectQDTests */,
 				BCDC72161BD791AA00411C24 /* Products */,
+				F30E75C81EFDF8D500116DDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -902,6 +912,8 @@
 		BCDC72411BD7ABDE00411C24 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				F30E75C51EFDF83800116DDA /* RegexKitLite.h */,
+				F30E75C61EFDF83800116DDA /* RegexKitLite.m */,
 				BCB684F91BE9FF1900D0124A /* lib */,
 				BCC85BF21BE235F500E66303 /* umeng_ios_social_sdk_4.2.5_arm64_custom */,
 				BCC85BCC1BE1D63400E66303 /* SDCycleScrollView */,
@@ -928,6 +940,8 @@
 				BCED3F511BD8D9EA0079675F /* Net.m */,
 				F338F4601D825E3C00D73544 /* MyNavigationBar.h */,
 				F338F4611D825E3C00D73544 /* MyNavigationBar.m */,
+				F3B880EE1EFD144700123095 /* RTextLabel.h */,
+				F3B880EF1EFD144700123095 /* RTextLabel.m */,
 			);
 			name = ToolClass;
 			path = Other;
@@ -1150,6 +1164,14 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		F30E75C81EFDF8D500116DDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F30E75C91EFDF8D500116DDA /* libicucore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F3678B091D6DA8DF00E2158B /* DataFactoryFMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -1313,6 +1335,7 @@
 				BCED3FC01BD8F1B20079675F /* SDWebImagePrefetcher.m in Sources */,
 				F33190AC1D868FD7000D70AC /* Toast+UIView.m in Sources */,
 				BCED3F441BD8D9C40079675F /* AFURLConnectionOperation.m in Sources */,
+				F30E75C71EFDF83800116DDA /* RegexKitLite.m in Sources */,
 				BC737D161BDDD33900C56CE7 /* FirstMCell.m in Sources */,
 				BCED3FC51BD8F1B20079675F /* UIImageView+HighlightedWebCache.m in Sources */,
 				BCDC724D1BD7ADD700411C24 /* RootNavigationViewController.m in Sources */,
@@ -1366,6 +1389,7 @@
 				BC94DC6D1BE8E72100A9538C /* ThirdMapViewController.m in Sources */,
 				BC737D321BDE400800C56CE7 /* FourViewController.m in Sources */,
 				BCED3FBB1BD8F1B20079675F /* SDWebImageCompat.m in Sources */,
+				F3B880F01EFD144700123095 /* RTextLabel.m in Sources */,
 				BCC85BE51BE1D63400E66303 /* UIView+SDExtension.m in Sources */,
 				BC737D231BDE11B800C56CE7 /* FMDatabase.m in Sources */,
 				BCC85BC71BE1C90E00E66303 /* SecondDetailCell.m in Sources */,

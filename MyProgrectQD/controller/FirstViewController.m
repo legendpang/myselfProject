@@ -39,9 +39,32 @@
     self.tableView.scrollEnabled = YES;
     MyNavigationBar * mynav = [[MyNavigationBar alloc] initWithTitle:@"首页" withColor:[UIColor whiteColor]];
     [self.view addSubview:mynav];
-        
+    //[self textLabel];
 }
-
+-(void)textLabel
+{
+    UILabel * label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 30, 300, 20);
+    label.backgroundColor = [UIColor redColor];
+    label.font = [UIFont systemFontOfSize:12];
+    [self.view addSubview:label];
+    NSMutableAttributedString *strM = [[NSMutableAttributedString alloc] init];
+    
+    NSTextAttachment *imageStr = [[NSTextAttachment alloc]init];
+    
+    imageStr.image = [UIImage imageNamed:@"am"];
+    
+    imageStr.bounds = CGRectMake(0, 0, 20, 20);
+    
+    NSAttributedString *attrString = [NSAttributedString attributedStringWithAttachment:imageStr];
+    [strM appendAttributedString:[[NSAttributedString alloc] initWithString:@"大家好"]];
+    [strM appendAttributedString:attrString];
+    [strM appendAttributedString:[[NSAttributedString alloc] initWithString:@"如果你是我的传说"]];
+    label.attributedText = strM;
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:12.0],NSFontAttributeName, nil];
+    CGRect contentRect = [strM.string boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil];
+    label.frame = CGRectMake(0, 30, contentRect.size.width, contentRect.size.height);
+}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
